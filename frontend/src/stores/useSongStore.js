@@ -10,7 +10,7 @@ export const useSongStore = create((set, get) => ({
     fetchSongs: async () => {
         set({ loading: true, error: null });
         try {
-            const response = await fetch("http://localhost:5000/api/songs");
+            const response = await fetch("https://musicmania-t7rb.onrender.com/api/songs");
             if (!response.ok) throw new Error("Failed to fetch songs");
             const data = await response.json();
             set({ songs: data, loading: false });
@@ -24,7 +24,7 @@ export const useSongStore = create((set, get) => ({
     createSong: async (formData) => {
         set({ loading: true, error: null });
         try {
-            const response = await fetch("http://localhost:5000/api/admin/songs", {
+            const response = await fetch("https://musicmania-t7rb.onrender.com/api/admin/songs", {
                 method: "POST",
                 body: formData,
                 credentials: "include",
