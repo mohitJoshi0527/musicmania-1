@@ -34,7 +34,7 @@ const HomePage = () => {
       }
 
       // Create an order on the backend
-      const response = await fetch("https://musicmania-t7rb.onrender.com/api/payment/order", {
+      const response = await fetch("https://musicmania-32nu.onrender.com/api/payment/order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ songId }),
@@ -52,7 +52,7 @@ const HomePage = () => {
         description: `Purchase ${songs.find(s => s._id === songId)?.title || "Song"}`,
         order_id: data.order.id,
         handler: async (paymentResponse) => {
-          const verificationResponse = await fetch("https://musicmania-t7rb.onrender.com/api/payment/verify", {
+          const verificationResponse = await fetch("https://musicmania-32nu.onrender.com/api/payment/verify", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

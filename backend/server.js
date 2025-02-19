@@ -19,7 +19,7 @@ const _dirname = path.resolve()
 // CORS configuration
 app.use(
   cors({
-    origin: "https://musicmania-t7rb.onrender.com", // Allow requests from your frontend
+    origin: "https://musicmania-32nu.onrender.com", // Allow requests from your frontend
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
   })

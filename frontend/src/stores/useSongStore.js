@@ -10,7 +10,7 @@ export const useSongStore = create((set, get) => ({
     fetchSongs: async () => {
         set({ loading: true, error: null });
         try {
-            const response = await fetch("https://musicmania-t7rb.onrender.com/api/songs");
+            const response = await fetch("https://musicmania-32nu.onrender.com/api/songs");
             if (!response.ok) throw new Error("Failed to fetch songs");
             const data = await response.json();
             set({ songs: data, loading: false });
@@ -24,7 +24,7 @@ export const useSongStore = create((set, get) => ({
     createSong: async (formData) => {
         set({ loading: true, error: null });
         try {
-            const response = await fetch("https://musicmania-t7rb.onrender.com/api/admin/songs", {
+            const response = await fetch("https://musicmania-32nu.onrender.com/api/admin/songs", {
                 method: "POST",
                 body: formData,
                 credentials: "include",
@@ -50,7 +50,7 @@ export const useSongStore = create((set, get) => ({
         try {
             console.log("🔍 Deleting song with ID:", songId); // Debugging log
 
-            const response = await fetch(`https://musicmania-t7rb.onrender.com/api/admin/songs/${songId}`, { 
+            const response = await fetch(`https://musicmania-32nu.onrender.com/api/admin/songs/${songId}`, { 
                 method: "DELETE",
                 credentials: "include", // Ensure authentication is passed
             });
@@ -75,7 +75,7 @@ export const useSongStore = create((set, get) => ({
     updateSong: async (songId, formData) => {
         set({ loading: true, error: null });
         try {
-          const response = await fetch(`https://musicmania-t7rb.onrender.com/api/admin/songs/${songId}`, {
+          const response = await fetch(`https://musicmania-32nu.onrender.com/api/admin/songs/${songId}`, {
             method: "PUT",
             body: formData,
             credentials: "include",

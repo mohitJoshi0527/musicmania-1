@@ -66,7 +66,7 @@ export const login = async (req, res) => {
       sameSite: "None",
       maxAge: 3600000,
       path: "/", // Critical for cross-route cookie deletion
-      domain: "https://musicmania-t7rb.onrender.com",
+      domain: "https://musicmania-32nu.onrender.com",
     });
 
     res.status(200).json({
@@ -88,10 +88,10 @@ export const logout = (req, res) => {
   res.cookie("token", "", {
     httpOnly: true,
     secure: true, // Must match login
-    sameSite: "strict",
+    sameSite: "None",
     maxAge: 0, // Expire immediately
     path: "/", // Must match login
-    domain: "https://musicmania-t7rb.onrender.com" // Add this
+    domain: "https://musicmania-32nu.onrender.com" // Add this
   });
   res.status(200).json({ message: "Logged out successfully" });
 };
