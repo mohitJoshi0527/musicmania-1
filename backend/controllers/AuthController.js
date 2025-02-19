@@ -29,6 +29,15 @@ export const signup = async (req, res) => {
         expiresIn: "1h",
       }
     );
+    res.cookie("token", token, {
+      // Same options as login
+      httpOnly: true,
+      secure: true,
+      sameSite: "None",
+      maxAge: 3600000,
+      path: "/",
+      domain: "musicmania-32nu.onrender.com",
+    });
     res.status(201).json({ message: "User created successfully", user, token });
   } catch (error) {
     res
@@ -66,7 +75,7 @@ export const login = async (req, res) => {
       sameSite: "None",
       maxAge: 3600000,
       path: "/", // Critical for cross-route cookie deletion
-      domain: "https://musicmania-32nu.onrender.com",
+      domain: "musicmania-32nu.onrender.com",
     });
 
     res.status(200).json({
@@ -91,7 +100,7 @@ export const logout = (req, res) => {
     sameSite: "None",
     maxAge: 0, // Expire immediately
     path: "/", // Must match login
-    domain: "https://musicmania-32nu.onrender.com" // Add this
+    domain: "musicmania-32nu.onrender.com", // Add this
   });
   res.status(200).json({ message: "Logged out successfully" });
 };

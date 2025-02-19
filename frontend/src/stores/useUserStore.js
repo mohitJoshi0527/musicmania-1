@@ -61,7 +61,7 @@ const useUserStore = create(
           }
 
           const data = await response.json();
-          set({ user: data.user, token: data.token, loading: false });
+          set({ user: data.user, loading: false });
         } catch (error) {
           set({ error: error.message, loading: false });
         }
