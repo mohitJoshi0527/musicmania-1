@@ -9,7 +9,7 @@ const useAuthStore = create((set) => ({
   checkAuth: async () => {
     set({ loading: true });
     try {
-      const response = await fetch("http://localhost:5000/api/auth/me", {
+      const response = await fetch("https://musicmania-t7rb.onrender.com/api/auth/me", {
         credentials: "include", // Include cookies
       });
 

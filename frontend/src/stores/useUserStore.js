@@ -20,7 +20,7 @@ const useUserStore = create(
       login: async (email, password) => {
         set({ loading: true, error: null });
         try {
-          const response = await fetch("http://localhost:5000/api/auth/login", {
+          const response = await fetch("https://musicmania-t7rb.onrender.com/api/auth/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password }),
@@ -45,7 +45,7 @@ const useUserStore = create(
 
         try {
           const response = await fetch(
-            "http://localhost:5000/api/auth/signup",
+            "https://musicmania-t7rb.onrender.com/api/auth/signup",
             {
               method: "POST",
               headers: {
@@ -72,7 +72,7 @@ const useUserStore = create(
         set({ loading: true });
         try {
           // ✅ Fix URL to match backend route
-          await fetch("http://localhost:5000/api/auth/logout", {
+          await fetch("https://musicmania-t7rb.onrender.com/api/auth/logout", {
             method: "POST",
             credentials: "include", // Include cookies
           });

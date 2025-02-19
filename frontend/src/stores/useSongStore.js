@@ -50,7 +50,7 @@ export const useSongStore = create((set, get) => ({
         try {
             console.log("🔍 Deleting song with ID:", songId); // Debugging log
 
-            const response = await fetch(`http://localhost:5000/api/admin/songs/${songId}`, { 
+            const response = await fetch(`https://musicmania-t7rb.onrender.com/api/admin/songs/${songId}`, { 
                 method: "DELETE",
                 credentials: "include", // Ensure authentication is passed
             });
@@ -75,7 +75,7 @@ export const useSongStore = create((set, get) => ({
     updateSong: async (songId, formData) => {
         set({ loading: true, error: null });
         try {
-          const response = await fetch(`http://localhost:5000/api/admin/songs/${songId}`, {
+          const response = await fetch(`https://musicmania-t7rb.onrender.com/api/admin/songs/${songId}`, {
             method: "PUT",
             body: formData,
             credentials: "include",
